@@ -367,7 +367,7 @@
 			linux,reserve-contiguous-region;
 			oem,reserve-region;//modify by jiachenghui for ramoops reserve region
 			//linux,remove-completely;//del by jiachenghui for ramoops reserve region
-			reg = <0 0xac000000 0 0x00100000>;//modify from 0x05800000 to 0xac000000 by jiachenghui for ramoops reserve region
+			reg = <0 0xabf00000 0 0x00200000>;//modify from 0x05800000 to 0xac000000 by jiachenghui for ramoops reserve region
 			label = "ramoops_mem";
 		};
 /* #endif VENDOR_EDIT */
