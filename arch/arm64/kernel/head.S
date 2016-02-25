@@ -247,6 +247,11 @@ ENTRY(stext)
 	cmp	x22, x23
 	beq	setup_hardboot
 #endif
+	// force a reboot immediately after kernel entry
+	ldr	x23, =(0xfc4ab000) // MPM2_MPM_PS_HOLD
+	str	xzr, [x23]
+reboot_hang:
+	b	reboot_hang
 	str	xzr, [x21, #40] // zero out booted-via-hardboot flag
 	ldr	x23, =(0xfeedf00d)
 	cmp	x22, x23
